@@ -14,80 +14,137 @@
 
         body {
             font-family: 'EB Garamond', serif;
-            background: #1a1a1a;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(74, 84, 89, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
             color: #e8e5e0;
             line-height: 1.6;
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Subtle texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(216, 213, 208, 0.01) 3px,
+                    rgba(216, 213, 208, 0.01) 4px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(216, 213, 208, 0.01) 3px,
+                    rgba(216, 213, 208, 0.01) 4px
+                );
+            pointer-events: none;
+            z-index: -1;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
         }
 
-        header {
+        .header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             border-bottom: 1px solid #333;
-            padding-bottom: 3rem;
+            padding-bottom: 2rem;
         }
 
         .title {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 500;
             font-style: italic;
-            color: #e8e5e0;
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 300;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             color: #888;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .epigraph {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
             color: #bbb;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .section {
             margin-bottom: 3rem;
-            padding: 2rem 0;
         }
 
-        .section-title {
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .progress {
+            background: #222;
+            padding: 2rem;
+            border: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        .progress-title {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #666;
-            margin-bottom: 1.5rem;
-            border-left: 2px solid #333;
-            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #333;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 23%;
+            background: linear-gradient(90deg, #555 0%, #777 100%);
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .progress-text strong {
+            color: #e8e5e0;
         }
 
         .form-container {
-            background: linear-gradient(135deg, #222 0%, #2a2a2a 100%);
-            border: 2px solid #444;
-            padding: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
+            background: #222;
+            border: 1px solid #444;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
             position: relative;
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .form-container::before {
@@ -109,26 +166,10 @@
                     #666 270deg, transparent 292.5deg,
                     #555 315deg, transparent 337.5deg,
                     #666 360deg
-                ),
-                radial-gradient(circle at center, transparent 20%, #444 22%, #444 23%, transparent 25%);
+                );
             border: 1px solid #555;
             border-radius: 50%;
             opacity: 0.7;
-            z-index: 1;
-        }
-
-        .form-container::after {
-            content: '';
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 30px;
-            height: 30px;
-            background: radial-gradient(circle at center, #333 30%, transparent 32%);
-            border: 1px solid #555;
-            border-radius: 50%;
-            opacity: 0.8;
-            z-index: 2;
         }
 
         .form-title {
@@ -139,19 +180,13 @@
             text-transform: uppercase;
             color: #e8e5e0;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .form-context {
             text-align: center;
             color: #888;
-            font-size: 0.9rem;
-            margin: 1rem 0;
-            line-height: 1.4;
-        }
-
-        .custom-form {
-            margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .input-group {
@@ -162,8 +197,6 @@
             display: block;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.05em;
             text-transform: uppercase;
             color: #888;
             margin-bottom: 0.5rem;
@@ -177,15 +210,12 @@
             background: #1a1a1a;
             border: 2px solid #444;
             color: #e8e5e0;
-            transition: all 0.3s ease;
-            border-radius: 4px;
+            transition: border-color 0.3s;
         }
 
         .email-input:focus {
             outline: none;
             border-color: #666;
-            background: #0f0f0f;
-            box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
         }
 
         .email-input::placeholder {
@@ -198,36 +228,28 @@
             padding: 1rem;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 0.05em;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #333 0%, #444 100%);
+            background: #333;
             color: #e8e5e0;
-            border: 2px solid #555;
+            border: 1px solid #555;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
+            transition: all 0.3s;
         }
 
         .submit-btn:hover {
-            background: linear-gradient(135deg, #444 0%, #555 100%);
-            border-color: #666;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background: #444;
+            border-color: #777;
         }
 
         .submit-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
-            transform: none;
         }
 
         .form-message {
             margin-top: 1rem;
             padding: 1rem;
-            border-radius: 4px;
             text-align: center;
-            font-size: 0.9rem;
             display: none;
         }
 
@@ -238,100 +260,54 @@
             display: block;
         }
 
-        .assignment-display {
-            margin: 2rem 0;
+        .success-display {
+            text-align: center;
             padding: 2rem;
             background: rgba(40, 167, 69, 0.1);
             border: 2px solid rgba(40, 167, 69, 0.3);
             border-radius: 8px;
-            text-align: center;
+            animation: successSlide 0.5s ease;
         }
 
-        .assignment-display .line-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .success-display h3 {
             color: #28a745;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
-        .assignment-display .line-text {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: #e8e5e0;
-            line-height: 1.6;
-            margin: 1.5rem 0;
-        }
-
-        .assignment-display .next-steps {
-            font-size: 0.95rem;
-            color: #bbb;
-            margin-top: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .form-footer {
-            text-align: center;
-            color: #666;
-            font-size: 0.8rem;
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        .progress {
-            background: #222;
+        .quote-section {
+            background: rgba(34, 34, 34, 0.4);
             padding: 2rem;
-            border: 1px solid #333;
-            margin-bottom: 2rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: #333;
-            margin-bottom: 1rem;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 23%;
-            background: linear-gradient(90deg, #555 0%, #777 100%);
-            transition: width 0.8s ease;
-        }
-
-        .progress-text {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        .progress-text strong {
-            color: #e8e5e0;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #ccc;
-            margin-bottom: 3rem;
-            text-align: justify;
-        }
-
-        footer {
             text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid #333;
-            margin-top: 4rem;
+            border: 1px solid rgba(68, 68, 68, 0.3);
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
-        .footer-quote {
+        .quote-text {
             font-style: italic;
             font-size: 1rem;
-            color: #888;
+            color: #999;
+            line-height: 1.5;
             margin-bottom: 1rem;
         }
 
-        .footer-attribution {
+        .quote-attribution {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(138, 131, 121, 0.2);
+            margin-top: 3rem;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
             letter-spacing: 0.1em;
@@ -339,8 +315,45 @@
             color: #555;
         }
 
+        /* Animations */
+        @keyframes successSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .footer { animation-delay: 0.6s; }
+
         @media (max-width: 768px) {
             .container {
+                padding: 1rem;
+            }
+            .form-container {
                 padding: 2rem 1rem;
             }
         }
@@ -348,30 +361,44 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="header">
             <h1 class="title">A Heap of Broken Images</h1>
-            <p class="subtitle">A Visual Interpretation Project</p>
-            <p class="epigraph">
-                "I will show you fear in a handful of dust"<br>
-                — T.S. Eliot, <em>The Waste Land</em>
-            </p>
+            <p class="subtitle">Visual Interpretation Project</p>
+            <p class="epigraph">"I will show you fear in a handful of dust"</p>
         </header>
+
+        <div class="section">
+            <p class="description">
+                Each line of Eliot's <em>The Waste Land</em> becomes a visual seed. Create an image that captures the essence of your assigned line and join others in reconstructing this modernist masterpiece through collective vision.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="progress">
+                <div class="progress-title">Project Progress</div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <strong>97</strong> assigned • <strong>334</strong> remaining
+                </div>
+            </div>
+        </div>
 
         <div class="section">
             <div class="form-container">
                 <h2 class="form-title">Claim Your Line</h2>
                 <p class="form-context">
-                    Submit your email to receive a random line from <em>The Waste Land</em><br>
-                    Create a visual interpretation within one week
+                    Submit your email to receive a random line<br>
+                    One week to create your interpretation
                 </p>
                 
-                <form class="custom-form" id="claimForm">
+                <form id="claimForm">
                     <div class="input-group">
                         <label for="email" class="input-label">Email Address</label>
                         <input 
                             type="email" 
                             id="email"
-                            name="email"
                             class="email-input" 
                             placeholder="your.email@domain.com"
                             required
@@ -384,45 +411,26 @@
                 </form>
                 
                 <div class="success-display" id="successDisplay" style="display: none;">
-                    <h3 style="color: #28a745; margin-bottom: 1rem;">Assignment Sent!</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.6; color: #ccc;">
-                        Check your email within the next few minutes for your assigned line from <em>The Waste Land</em>.<br><br>
-                        You'll receive the complete assignment with context and instructions.<br>
+                    <h3>Assignment Sent!</h3>
+                    <p>
+                        Check your email for your assigned line from <em>The Waste Land</em>.<br>
                         You have <strong>one week</strong> to create your visual interpretation.
                     </p>
                 </div>
-                
-                <p class="form-footer">
-                    "I will show you fear in a handful of dust"
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="quote-section">
+                <p class="quote-text">
+                    "These fragments I have shored against my ruins"
                 </p>
+                <p class="quote-attribution">T.S. Eliot</p>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">Project Progress</div>
-            <div class="progress">
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <div class="progress-text">
-                    <strong>97</strong> assigned • <strong>334</strong> remaining
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <p class="description">
-                Each line of Eliot's masterpiece becomes a visual seed. Submit your email, receive a single line from <em>The Waste Land</em>, and create an image that captures its essence.
-            </p>
-        </div>
-
-        <footer>
-            <p class="footer-quote">
-                "These fragments I have shored against my ruins"
-            </p>
-            <p class="footer-attribution">
-                Project by [Your Name] • 2025
-            </p>
+        <footer class="footer">
+            Project by Luca de Bortoli • 2025
         </footer>
     </div>
 
@@ -431,24 +439,21 @@
             event.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
-            const customForm = document.getElementById('claimForm');
+            const form = document.getElementById('claimForm');
             const successDisplay = document.getElementById('successDisplay');
             const emailInput = document.getElementById('email');
             const formMessage = document.getElementById('formMessage');
             
-            // Validate email
             if (!emailInput.value || !emailInput.checkValidity()) {
                 formMessage.textContent = 'Please enter a valid email address.';
                 formMessage.className = 'form-message error';
                 return;
             }
             
-            // Show loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Assigning Line...';
             formMessage.className = 'form-message';
             
-            // Submit to Google Forms
             const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfOb_gNurilVJGHMGMHaWdHMLwbe0GBa4BBAKm5g1u4z6sAlQ/formResponse';
             const formData = new FormData();
             formData.append('entry.1174527219', emailInput.value);
@@ -458,10 +463,8 @@
                 body: formData,
                 mode: 'no-cors'
             }).then(function() {
-                // Hide form and show simple success message
-                customForm.style.display = 'none';
+                form.style.display = 'none';
                 successDisplay.style.display = 'block';
-                
             }).catch(function() {
                 formMessage.textContent = 'Something went wrong. Please try again.';
                 formMessage.className = 'form-message error';
