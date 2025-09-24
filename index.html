@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background: #1a1a1a;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,6 +55,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
+            width: 100%;
         }
 
         .header {
@@ -352,9 +353,15 @@
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
+                overflow-x: hidden;
             }
             .form-container {
                 padding: 2rem 1rem;
+                margin: 1rem 0;
+            }
+            .form-container::before,
+            .form-container::after {
+                display: none;
             }
         }
     </style>
@@ -371,18 +378,6 @@
             <p class="description">
                 Each line of Eliot's <em>The Waste Land</em> becomes a visual seed. Create an image that captures the essence of your assigned line and join others in reconstructing this modernist masterpiece through collective vision.
             </p>
-        </div>
-
-        <div class="section">
-            <div class="progress">
-                <div class="progress-title">Project Progress</div>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <div class="progress-text">
-                    <strong>97</strong> assigned • <strong>334</strong> remaining
-                </div>
-            </div>
         </div>
 
         <div class="section">
@@ -416,6 +411,18 @@
                         Check your email for your assigned line from <em>The Waste Land</em>.<br>
                         You have <strong>one week</strong> to create your visual interpretation.
                     </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="progress">
+                <div class="progress-title">Project Progress</div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <strong>97</strong> assigned • <strong>334</strong> remaining
                 </div>
             </div>
         </div>
