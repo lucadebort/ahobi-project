@@ -1,3 +1,5 @@
+<img width="1088" height="228" alt="Screenshot 2026-02-05 at 15 16 21" src="https://github.com/user-attachments/assets/f259f55f-0dec-4be7-be65-06b1fb1d3a40" />
+
 # AHOBI - A Heap of Broken Images 🖼️
 
 **A collaborative art project inspired by T.S. Eliot's *The Waste Land***
