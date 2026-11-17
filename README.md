@@ -1,45 +1,41 @@
-<img width="1088" height="228" alt="Screenshot 2026-02-05 at 15 16 21" src="https://github.com/user-attachments/assets/f259f55f-0dec-4be7-be65-06b1fb1d3a40" />
+# A heap of broken images
 
-# AHOBI - A Heap of Broken Images 🖼️
+![A frame from The Fire Sermon](still.jpg)
 
-**A collaborative art project inspired by T.S. Eliot's *The Waste Land***
+**[Play it](https://lucadebort.github.io/ahobi-project/)** · about 24 minutes, best with headphones
 
-> *"I will show you fear in a handful of dust."*
+T. S. Eliot reads *The Waste Land* in 1935. Under his voice, images, sounds and words move to one score, written line by line for the whole poem, from "April is the cruellest month" to the last "Shantih".
 
----
+Move the mouse to see where you are in the poem and jump to any line. Adding `?t=<seconds>` to the address starts the piece at that moment.
 
-## The Concept
+## What you see
 
-*The Waste Land* is a visionary poem, dense with fragmented images that compose into a mosaic of meaning. This project transforms that fragmentation into a collective experience.
+About 1,100 etchings, paintings, engravings and photographs from public domain collections, passing into one another through a WebGL feedback simulation. Each of the poem's 43 scenes has its own way of changing pictures and moving the camera: memories develop like a print in the tray, the river drowns them, the dry rock turns them to dust, the Fire Sermon burns through the film, the thunder's DA arrives in a flash. Most changes are a slow melt, and hard cuts are kept for the words that call for them, like the Tarot cards or the falling cities.
 
-**The idea:** each verse of the poem becomes a visual artwork, created by a different person. Together, the images recompose the poem into a new form.
+The lines of the poem appear as Eliot says them, timed to his reading word by word.
 
----
+## What you hear
 
-## How It Works
+Eliot's 1935 reading carries the piece. Under it runs a slow music made from old recordings: the third act of *Tristan und Isolde* from Bayreuth in 1928 and an acoustic recording of the Liebestod from 1913, stretched many times slower until they turn into drones. Where the poem quotes Wagner, the opera itself plays. On a few words ("Unreal City", the last "burning", the three DA, "Shantih") Eliot's own voice is frozen and held under what follows, and the picture freezes with it.
 
-1. **Request a verse** → The system extracts an unassigned verse from the database
-2. **Receive your assignment** → The verse arrives via email, it's yours
-3. **Create the artwork** → You have one week to produce an image (1024×1024px)
-4. **Contribute to the mosaic** → Your piece joins the collective visual rendition of the poem
+## How it's made
 
----
+- One hand-written score drives everything: the word timings of the reading, and for each scene its pool of images, its passages, camera moves, sounds and effects.
+- The voice is the clock. Images, words and music follow it, so pausing and seeking keep everything in step.
+- Pictures are drawn by a WebGL2 feedback simulation, and the envelope of the music makes them breathe.
+- The drones are rendered offline with a paulstretch written in TypeScript.
+- Next.js and TypeScript, exported as a static site. This repository holds the built site.
 
-## The Result
+## Credits
 
-A collaborative visual interpretation of *The Waste Land*, where each fragment is filtered through a different artist's sensibility — just as Eliot composed the poem by assembling fragments of voices, languages, and visions.
+- **Voice:** T. S. Eliot reading *The Waste Land*, 1935.
+- **Images:** Wikimedia Commons (655), Cleveland Museum of Art Open Access (301), The Metropolitan Museum of Art Open Access (117), Wellcome Collection (37). Every image is public domain or CC0. Title, artist, date, licence and source page for each one are in [`library/credits.json`](library/credits.json).
+- **Music:** Richard Wagner, *Tristan und Isolde*, act III, Bayreuth Festival 1928, conducted by Karl Elmendorff (Columbia, via the Internet Archive). *Liebestod*, Victor Herbert's Orchestra, 1913.
+- **Inspirations:** [Symphony in Acid](https://symphonyinacid.net) for the idea of a single score driving a piece in the browser; *Zauberberg* by Kassel Jaeger, Stephan Mathieu and Akira Rabelais for the music.
 
----
+## History
 
-## Stack
-
-`HTML` · `CSS` · `JavaScript`
-
----
-
-## About the Title
-
-*"A heap of broken images"* is a verse from *The Waste Land* (l. 22). It perfectly describes what this project aims to be: a pile of broken images that, together, create something new.
+This repository used to host the call for a collaborative version of the project, where each contributor received a line of the poem by email and made an image for it. That page is still in the history at commit `516a7e9`.
 
 ---
 
