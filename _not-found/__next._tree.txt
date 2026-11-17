@@ -1,4 +1,4 @@
-:HL["/ahobi-project/_next/static/chunks/1gd_5o9r8e0uk.css","style"]
+:HL["/ahobi-project/_next/static/chunks/43dbsmnb2c-d5.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"XqvYoh8KiK_zqtgSAQkqD","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"MBfBIAV9KQ4GMX0gic_DL","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
