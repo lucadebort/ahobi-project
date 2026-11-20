@@ -6,4 +6,4 @@
 :HL["/ahobi-project/_next/static/media/a8020b35c33b8e14-s.p.19q4vxlgtk0rb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ahobi-project/_next/static/media/c1aefd5161bb7f5d-s.p.1y9qe_7x2ofb7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"MBfBIAV9KQ4GMX0gic_DL","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"kfOSUfnJzRufNAkptroue","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
